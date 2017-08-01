@@ -351,3 +351,12 @@ end
 ```
 
 You may or may not need these many-to-many helper methods in this project, but it's nice to know you can easily add them.
+
+<ul>
+  <% @movie.characters.each do |character| %>
+    <li>
+      <%= character.actor.name %>
+      (<%= character.name %>)
+    </li>
+  <% end %>
+</ul>
