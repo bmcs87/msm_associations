@@ -19,11 +19,13 @@
         </a>
       </dd>
 
-
       <dt>Name</dt>
       <dd><%= @character.name %></dd>
-
     </dl>
+    
+      <!-- Character ID -->
+        <input type="hidden" name="character_id" value="<%= @character_id %>"> 
+      </div>
 
     <div class="btn-group btn-group-justified">
       <a href="/characters" class="btn btn-primary">

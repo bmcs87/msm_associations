@@ -43,11 +43,8 @@
   <% end %>
 </ul>
 
-<form action="/create_movie">
-  
-  <div class="row">
-  <div class="col-md-12">
-    <form action="/create_movie" method="post">
+
+<form action="/create_movie" method="post">
       <!-- Hidden input for authenticity token to protect from forgery -->
       <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
 
@@ -96,6 +93,7 @@
         <input type="text" id="image_url" name="image_url" placeholder="Image url" class="form-control" value="<%= @movie.image_url %>">
       </div>
 
+      <!-- Hidden Field -->
          <input type="hidden" name="director_id" value="<%= @director.id %>">
       </div>
 
@@ -103,7 +101,17 @@
         Create Movie
       </button>
       or
+      
+      <ul>
+      <li>
       <a href="/movies">Cancel</a>
+      </li>
+      
+      <li>
+      <a href="/movies/new">Add a New Movie</a>
+      </li>
+      </ul>
+      
     </form>
   </div>
 </div>
