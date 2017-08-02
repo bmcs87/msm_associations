@@ -27,10 +27,18 @@
           <%= @movie.director.name %>
         </a>  
       </dd>
-
+      
+      <dt>Actors</dt>
+      <dd>
+        <% @movie.actors.each do |actor| %>
+          <%= actor.name %>
+          (<%= Character.find_by(:actor_id => actor.id, :movie_id => @movie.id).name %>)
+        <% end %>  
+      </dd>
     </dl>
 
       <!-- Hidden Movie ID Field -->
+      <div>
         <input type="hidden" name="movie_id" value="<%= @movie_id %>"> 
       </div>
 
@@ -46,5 +54,6 @@
         Delete
       </a>
     </div>
+  
   </div>
 </div>
