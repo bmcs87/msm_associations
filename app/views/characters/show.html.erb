@@ -9,6 +9,8 @@
       <dd>
         <a href="/movies/<%= @character.movie_id %>">
           <%= @character.movie_id %>
+          <%= Movie.find_by(:id => @character.movie_id).title %>
+          <%= @character.movie.title %>
         </a>
       </dd>
 
@@ -16,16 +18,13 @@
       <dd>
         <a href="/actors/<%= @character.actor_id %>">
           <%= @character.actor_id %>
+          <%= @character.actor.name %>
         </a>
       </dd>
-
+      
       <dt>Name</dt>
       <dd><%= @character.name %></dd>
     </dl>
-    
-      <!-- Character ID -->
-        <input type="hidden" name="character_id" value="<%= @character_id %>"> 
-      </div>
 
     <div class="btn-group btn-group-justified">
       <a href="/characters" class="btn btn-primary">
