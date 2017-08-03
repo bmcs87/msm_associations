@@ -20,7 +20,6 @@
       <dt>Number of Characters</dt>
       <dd><%= Character.where(:actor_id => @actor.id).count %></dd>
     
-        
       <dt>Create a New Character</dt>   
       <dd>
         <ul>
@@ -44,7 +43,7 @@
             <!-- Hidden Actor ID -->
             <div class="form-group">
               <input type="hidden" name="actor_id" value="<%= @actor.id %>"> 
-            </div>
+
       
             <!-- Name of Character -->
             <div class="form-group">

@@ -44,9 +44,9 @@
       <!-- Name -->
       <div class="form-group">
         <label for="name" class="control-label">
-          Name
+          Character Name
         </label>
-        <%= select_tag("movie_id", options_from_collection_for_select(Character.all, :id, :name), :class => "form-control") %>
+        <input type="text" id="name" name="name" placeholder="Name" class="form-control" value="<%= @character_name %>">
       </div>
 
       <!-- Actor -->
@@ -54,15 +54,14 @@
         <label for="actor_id" class="control-label">
           Actor
         </label>
-        <%= select_tag("movie_id", options_from_collection_for_select(Actor.all, :id, :name), :class => "form-control") %>
+        <%= select_tag("actor_id", options_from_collection_for_select(Actor.all, :id, :name), :class => "form-control") %>
       </div>
 
       <!-- Hidden Field -->
-         <input type="hidden" name="movie_id" value="<%= @movie.id %>">
-      </div>
+      <input type="hidden" name="movie_id" value="<%= @movie.id %>">
 
       <button class="btn btn-success">
-        Create Movie
+        Create Character
       </button>
       or
       
